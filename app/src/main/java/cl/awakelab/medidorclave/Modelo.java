@@ -6,6 +6,7 @@ public class Modelo {
     public static final int FUERTE = 2;
 
     public int validarClave(String password) {
+
         if (password.length() < 5) {
             return DEVIL;
         } else if (password.equals(password.toLowerCase())) {
