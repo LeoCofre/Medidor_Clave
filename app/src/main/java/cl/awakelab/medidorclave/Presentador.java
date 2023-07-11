@@ -17,7 +17,6 @@ public class Presentador {
 
         if (nivelFuerza == Modelo.DEVIL) {
 
-
             this.vistaPresentador.mostrarDevil();
 
         } else if (nivelFuerza == Modelo.MEDIA) {
