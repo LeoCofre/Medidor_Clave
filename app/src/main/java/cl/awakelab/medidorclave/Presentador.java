@@ -3,18 +3,34 @@ package cl.awakelab.medidorclave;
 public class Presentador {
 
     private Modelo modelo;
+    private IVistaPresentador vistaPresentador;
 
-    public void evaluarClave(String password){
+    public Presentador(IVistaPresentador vistaPresentador) {
+        this.vistaPresentador = vistaPresentador;
+
+        modelo = new Modelo();
+    }
+
+    public void evaluarClave(String password) {
 
         int nivelFuerza = modelo.validarClave(password);
 
-        if (nivelFuerza == Modelo.DEVIL){
-        }else if (nivelFuerza == Modelo.MEDIA){
+        if (nivelFuerza == Modelo.DEVIL) {
 
 
-        }else if (nivelFuerza == Modelo.FUERTE){
+            this.vistaPresentador.mostrarDevil();
 
-        }else {
+        } else if (nivelFuerza == Modelo.MEDIA) {
+
+            this.vistaPresentador.mostrarMedia();
+
+        } else if (nivelFuerza == Modelo.FUERTE) {
+
+            this.vistaPresentador.mostrarFuerte();
+
+        } else {
+
+            this.vistaPresentador.mostrarError();
 
         }
     }
