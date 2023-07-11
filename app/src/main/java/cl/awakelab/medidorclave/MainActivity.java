@@ -1,11 +1,15 @@
 package cl.awakelab.medidorclave;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import cl.awakelab.medidorclave.databinding.ActivityMainBinding;
@@ -14,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements IVistaPresentador
 
     ActivityMainBinding binding;
     private Presentador presentador;
+
+    TextView textView = binding.textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,19 +49,23 @@ public class MainActivity extends AppCompatActivity implements IVistaPresentador
 
     @Override
     public void mostrarDevil() {
-        Toast.makeText(this, "Contraseña Devil", Toast.LENGTH_SHORT).show();
 
+        textView.setBackgroundColor(getColor(R.color.rojo));
+        textView.setText(R.string.devil);
     }
 
     @Override
     public void mostrarMedia() {
-        Toast.makeText(this, "Contraseña Media", Toast.LENGTH_SHORT).show();
+
+        textView.setBackgroundColor(getColor(R.color.amarillo));
+        textView.setText(R.string.media);
     }
 
     @Override
     public void mostrarFuerte() {
 
-        Toast.makeText(this, "Contraseña Fuerte", Toast.LENGTH_SHORT).show();
+        textView.setBackgroundColor(getColor(R.color.verde));
+        textView.setText(R.string.fuerte);
     }
 
     @Override

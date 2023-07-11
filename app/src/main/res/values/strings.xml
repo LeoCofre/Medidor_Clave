@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Medidor Clave</string>
+    <string name="media">Media</string>
+    <string name="devil">Devil</string>
+    <string name="fuerte">Fuerte</string>
+    <string name="crear_contrase_a">Crear contraseña</string>
 </resources>
